@@ -1,14 +1,14 @@
-{ pkgs, unstable, ... }:
+{ pkgs, ... }:
 {
-    environment.systemPackages = [
-        unstable.zed-editor
-        pkgs.aseprite
-        pkgs.vscode
-        pkgs.alacritty
-        pkgs.obsidian
-        pkgs.vlc
-        pkgs.mullvad-vpn
-    ];
+  environment.systemPackages = with pkgs; [
+    unbroken.zed-editor
+    aseprite
+    vscode
+    alacritty
+    obsidian
+    vlc
+    mullvad-vpn
+  ];
 
-    programs.firefox.enable = true;
+  programs.firefox.enable = true;
 }

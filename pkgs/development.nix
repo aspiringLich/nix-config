@@ -1,10 +1,12 @@
-{ pkgs, unstable, ... }: {
-    environment.systemPackages = [
-        pkgs.nixd
-        pkgs.nil
-        pkgs.nixfmt-rfc-style
-        
-        unstable.cargo
-        unstable.rustc
-    ];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    nixd
+    nil
+    nixfmt-rfc-style
+    cachix
+
+    unstable.cargo
+    unstable.rustc
+  ];
 }

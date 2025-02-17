@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-    environment.systemPackages = [
-        pkgs.jetbrains-mono
-    ];
+  environment.systemPackages = with pkgs; [
+    jetbrains-mono
+  ];
 }

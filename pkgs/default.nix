@@ -1,8 +1,9 @@
-{ ... }: {
-    imports = [
-        ./development.nix
-        ./font.nix
-        ./programs.nix
-        ./shell.nix
-    ];
+{ ... }:
+{
+  imports = [
+    ./development.nix
+    ./font.nix
+    ./programs.nix
+    ./shell.nix
+  ];
 }
