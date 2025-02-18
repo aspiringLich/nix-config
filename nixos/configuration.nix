@@ -128,17 +128,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
-  # Create a library path that only applies to unpackaged programs
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-    glibc
-    alsa-lib
-    libxkbcommon
-    wayland
-    xorg.libxcb
-    vulkan-loader
-  ];
 }

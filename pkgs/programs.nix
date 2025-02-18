@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     unbroken.zed-editor
     aseprite
-    unstable.vscode
     unstable.alacritty
     unstable.obsidian
     unstable.vlc

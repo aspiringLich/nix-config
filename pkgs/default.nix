@@ -12,5 +12,7 @@
     vim
     git
     sudo
+
+    kdePackages.yakuake
   ];
 }
