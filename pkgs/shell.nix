@@ -1,14 +1,10 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    neofetch
-    nh
-    vim
-    git
-    sudo
-  ];
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # disable fish_greeting
+    '';
   };
   programs.bash = {
     interactiveShellInit = ''
@@ -22,7 +18,21 @@
   programs.starship = {
     enable = true;
     settings = {
-
+      character = {
+        success_symbol = "[➜](bold green) ";
+        error_symbol = "[✗](bold red) ";
+        vimcmd_symbol = "[❯](bold cyan) ";
+        vimcmd_replace_one_symbol = "[❱](bold purple) ";
+        vimcmd_replace_symbol = "[❱](bold purple) ";
+        vimcmd_visual_symbol = "[❮](bold yellow) ";
+      };
+      # directory.substitutions = {
+      #   Documents = "󰈙 ";
+      #   Downloads = " ";
+      #   Music = " ";
+      #   Pictures = " ";
+      #   Programming = " ";
+      # };
     };
   };
 }

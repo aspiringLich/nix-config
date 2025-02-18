@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     hydra-check
   ];
-  
+
   nix.settings = {
     extra-substituters = [
       "https://nix-community.cachix.org"

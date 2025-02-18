@@ -3,12 +3,19 @@
   environment.systemPackages = with pkgs; [
     unbroken.zed-editor
     aseprite
-    vscode
-    alacritty
-    obsidian
-    vlc
-    mullvad-vpn
+    unstable.vscode
+    unstable.alacritty
+    unstable.obsidian
+    unstable.vlc
+    unstable.webcord-vencord
   ];
+
+  # https://nixos.wiki/wiki/Mullvad_VPN
+  services.resolved.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.unstable.mullvad-vpn;
+  };
 
   programs.firefox.enable = true;
 }

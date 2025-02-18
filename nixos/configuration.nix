@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  config,
   pkgs,
   ...
 }:
@@ -94,7 +93,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
   };
 
   # Enable automatic login for the user.
@@ -103,12 +101,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
