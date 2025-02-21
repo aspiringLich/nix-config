@@ -5,13 +5,13 @@
     nil
     nixfmt-rfc-style
     cachix
-    
+
     wineWowPackages.stable
     wineWowPackages.waylandFull
-    
+
     unstable.rustc
     unstable.cargo
-    
+
     # # i need most of these to get rust-analyzer to stop yelling at me
     # libclang
     # mold
