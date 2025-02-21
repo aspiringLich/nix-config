@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unbroken.url = "github:nixos/nixpkgs/64e75cd44acf";
 
@@ -52,6 +53,7 @@
               { ... }:
               {
                 nixpkgs.overlays = [ overlay ];
+                nixpkgs.config.allowUnfree = true;
               }
             )
             ./nixos/configuration.nix
@@ -72,6 +74,7 @@
               { ... }:
               {
                 nixpkgs.overlays = [ overlay ];
+                nixpkgs.config.allowUnfree = true;
               }
             )
             # > Our main home-manager configuration file <

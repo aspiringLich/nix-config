@@ -7,6 +7,7 @@
     unstable.obsidian
     unstable.vlc
     unstable.webcord-vencord
+    unstable.rpi-imager
   ];
 
   # https://nixos.wiki/wiki/Mullvad_VPN
@@ -17,4 +18,5 @@
   };
 
   programs.firefox.enable = true;
+  programs.wireshark.enable = true;
 }

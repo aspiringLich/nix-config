@@ -5,11 +5,24 @@
     nil
     nixfmt-rfc-style
     cachix
-
-    unstable.rustup
+    
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    
+    unstable.rustc
+    unstable.cargo
+    
+    # # i need most of these to get rust-analyzer to stop yelling at me
+    # libclang
+    # mold
+    # libffi
+    # glibc
+    # stdenv.cc.cc
   ];
-  environment.variables = {
+  environment.sessionVariables = {
     LIBCLANG_PATH = lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+    LIBRARY_PATH = "${pkgs.lib.getLib pkgs.stdenv.cc.libc}/lib";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   # Create a library path that only applies to unpackaged programs
@@ -17,12 +30,22 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
-    glibc
     alsa-lib
+    clang
+    glibc
+    libclang
+    libffi
     libxkbcommon
+    mold
+    openssl.dev
+    pkg-config
+    rustup
+    stdenv
+    vulkan-loader
     wayland
     xorg.libxcb
-    vulkan-loader
-    clang
+    zlib
+    zstd
+    stdenv.cc.cc
   ];
 }
