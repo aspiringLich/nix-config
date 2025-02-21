@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./suspend-hibernate.nix
   ];
 
   # Bootloader.
@@ -100,7 +101,6 @@
   services.displayManager.autoLogin.user = "mainusr";
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
