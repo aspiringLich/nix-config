@@ -11,6 +11,10 @@
 
     unstable.rustc
     unstable.cargo
+    unstable.rust-analyzer
+    
+    unstable.nodejs
+    unstable.python3
 
     # # i need most of these to get rust-analyzer to stop yelling at me
     # libclang

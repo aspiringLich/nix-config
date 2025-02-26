@@ -12,6 +12,7 @@
     vim
     git
     sudo
+    lazygit
 
     kdePackages.yakuake
   ];

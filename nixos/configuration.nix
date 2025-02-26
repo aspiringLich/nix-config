@@ -9,7 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./suspend-hibernate.nix
+    # ./suspend-hibernate.nix
   ];
 
   # Bootloader.
