@@ -12,7 +12,7 @@
     unstable.rustc
     unstable.cargo
     unstable.rust-analyzer
-    
+
     unstable.nodejs
     unstable.python3
 

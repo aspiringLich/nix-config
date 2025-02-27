@@ -9,6 +9,8 @@
     unstable.webcord-vencord
     unstable.rpi-imager
     unstable.typora
+    unstable.gparted
+    unstable.obs-studio
   ];
 
   # https://nixos.wiki/wiki/Mullvad_VPN

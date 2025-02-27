@@ -13,6 +13,7 @@
     git
     sudo
     lazygit
+    htop
 
     kdePackages.yakuake
   ];
