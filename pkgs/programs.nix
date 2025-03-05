@@ -1,11 +1,14 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    unbroken.zed-editor
+    unstable.zed-editor
     aseprite
     unstable.alacritty
     unstable.obsidian
+    # unstable.libvlc
     unstable.vlc
+    unstable.fluidsynth
+
     unstable.webcord-vencord
     unstable.rpi-imager
     unstable.typora

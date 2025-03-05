@@ -1,11 +1,18 @@
 { pkgs, ... }:
 {
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode;
-    extensions = with pkgs.vscode-extensions; [
-      rust-lang.rust-analyzer
-    ];
+  programs = {
+    vscode = {
+      enable = true;
+      package = pkgs.vscode;
+      extensions = with pkgs.vscode-extensions; [
+        rust-lang.rust-analyzer
+      ];
+    };
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
   };
 
   home = {

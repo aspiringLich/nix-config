@@ -15,13 +15,6 @@
 
     unstable.nodejs
     unstable.python3
-
-    # # i need most of these to get rust-analyzer to stop yelling at me
-    # libclang
-    # mold
-    # libffi
-    # glibc
-    # stdenv.cc.cc
   ];
   environment.sessionVariables = {
     LIBCLANG_PATH = lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
