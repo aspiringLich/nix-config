@@ -14,7 +14,28 @@
     unstable.rust-analyzer
 
     unstable.nodejs
-    unstable.python3
+
+    unstable.python312
+    unstable.python312Packages.ipykernel
+    unstable.python312Packages.python-lsp-server
+    unstable.pyright
+
+    alsa-lib
+    clang
+    glibc
+    libclang
+    libffi
+    libxkbcommon
+    mold
+    unstable.openssl
+    pkg-config
+    rustup
+    stdenv
+    vulkan-loader
+    wayland
+    xorg.libxcb
+    zlib
+    zstd
   ];
   environment.sessionVariables = {
     LIBCLANG_PATH = lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
@@ -34,7 +55,7 @@
     libffi
     libxkbcommon
     mold
-    openssl.dev
+    unstable.openssl
     pkg-config
     rustup
     stdenv

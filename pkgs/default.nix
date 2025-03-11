@@ -7,14 +7,14 @@
     ./shell.nix
   ];
   environment.systemPackages = with pkgs; [
-    neofetch
-    nh
-    vim
-    git
-    sudo
-    lazygit
-    htop
+    unstable.neofetch
+    unstable.nh
+    unstable.vim
+    unstable.git
+    unstable.sudo
+    unstable.lazygit
+    unstable.htop
 
-    kdePackages.yakuake
+    unstable.kdePackages.yakuake
   ];
 }
