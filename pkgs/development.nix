@@ -19,23 +19,6 @@
     unstable.python312Packages.ipykernel
     unstable.python312Packages.python-lsp-server
     unstable.pyright
-
-    alsa-lib
-    clang
-    glibc
-    libclang
-    libffi
-    libxkbcommon
-    mold
-    unstable.openssl
-    pkg-config
-    rustup
-    stdenv
-    vulkan-loader
-    wayland
-    xorg.libxcb
-    zlib
-    zstd
   ];
   environment.sessionVariables = {
     LIBCLANG_PATH = lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
@@ -66,4 +49,19 @@
     zstd
     stdenv.cc.cc
   ];
+
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+        #type database DBuser origin-address auth-method
+        local all       all     trust
+        # ipv4
+        host  all      all     127.0.0.1/32   trust
+        # ipv6
+        host all       all     ::1/128        trust
+    '';
+  };
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "mainusr" ];
 }
