@@ -14,6 +14,7 @@
     unstable.typora
     unstable.gparted
     unstable.obs-studio
+    unstable.qbittorrent
   ];
   programs.wireshark.enable = true;
 
@@ -34,6 +35,7 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true; # add `gamemoderun %command%` to game launch properties
 }

@@ -19,14 +19,13 @@
       type = "fcitx5";
       fcitx5 = {
         waylandFrontend = true;
-        # plasma6Support = true;
         addons = with pkgs; [
-          # fcitx5-gtk
+          fcitx5-gtk
           fcitx5-chinese-addons
-          fcitx5-mozc
-          fcitx5-rime
-          rime-data
-          fcitx5-pinyin-zhwiki
+          # fcitx5-mozc
+          # fcitx5-rime
+          # rime-data
+          # fcitx5-pinyin-zhwiki
         ];
       };
     };

@@ -19,7 +19,11 @@
     unstable.python312Packages.ipykernel
     unstable.python312Packages.python-lsp-server
     unstable.pyright
+
+    unstable.avrdude
+    unstable.arduino-ide
   ];
+  users.extraGroups.dialout.members = [ "mainusr" ];
   environment.sessionVariables = {
     LIBCLANG_PATH = lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
     LIBRARY_PATH = "${pkgs.lib.getLib pkgs.stdenv.cc.libc}/lib";
@@ -54,12 +58,12 @@
     enable = true;
     enableTCPIP = true;
     authentication = pkgs.lib.mkOverride 10 ''
-        #type database DBuser origin-address auth-method
-        local all       all     trust
-        # ipv4
-        host  all      all     127.0.0.1/32   trust
-        # ipv6
-        host all       all     ::1/128        trust
+      #type database DBuser origin-address auth-method
+      local all       all     trust
+      # ipv4
+      host  all      all     127.0.0.1/32   trust
+      # ipv6
+      host all       all     ::1/128        trust
     '';
   };
   virtualisation.docker.enable = true;
