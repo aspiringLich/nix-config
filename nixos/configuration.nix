@@ -109,6 +109,7 @@
 
   # https://github.com/NixOS/nixos-hardware/blob/master/framework/13-inch/7040-amd/README.md
   services.fwupd.enable = true;
+  # hardware.framework.amd-7040.preventWakeOnAC = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

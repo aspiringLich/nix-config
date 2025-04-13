@@ -14,6 +14,7 @@
     unstable.rust-analyzer
 
     unstable.nodejs
+    unstable.pnpm
 
     unstable.python312
     unstable.python312Packages.ipykernel
