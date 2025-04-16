@@ -59,7 +59,7 @@
             ./nixos/configuration.nix
             ./pkgs
             ./nix.nix
-            nixos-hardware.nixosModules.framework-12th-gen-intel
+            nixos-hardware.nixosModules.framework-13-7040-amd
           ];
         };
       };
