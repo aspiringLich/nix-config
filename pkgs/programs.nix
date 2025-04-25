@@ -15,6 +15,9 @@
     unstable.gparted
     unstable.obs-studio
     unstable.qbittorrent
+
+    unstable.inkscape
+    unstable.mslicer
   ];
   programs.wireshark.enable = true;
 
