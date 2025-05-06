@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
+  pkgs,
   ...
 }:
 {
@@ -12,6 +13,7 @@
     ./i8n.nix
     ./power-management.nix
   ];
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

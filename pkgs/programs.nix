@@ -15,6 +15,7 @@
     unstable.gparted
     unstable.obs-studio
     unstable.qbittorrent
+    unstable.protonup-qt
 
     unstable.inkscape
     unstable.mslicer

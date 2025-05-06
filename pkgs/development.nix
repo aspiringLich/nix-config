@@ -53,6 +53,7 @@
     zlib
     zstd
     stdenv.cc.cc
+    libplist
   ];
 
   services.postgresql = {
