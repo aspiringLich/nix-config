@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  boot.kernelParams = [ "amd_pstate=guided" ];
+  boot.kernelParams = [ "amd_pstate=passive" ];
   # powerManagement.enable = true;
   # powerManagement.cpuFreqGovernor = "schedutil";
   # firefox hardware acceleration
@@ -14,7 +14,8 @@
       enable = true;
       package = pkgs.unstable.power-profiles-daemon;
   };
-  services.thermald.enable = true;
+  # services.thermald.enable = true; only on intel
+  powerManagement.powertop.enable = true;
   # services.tlp = {
   #   enable = true;
   #   settings = {

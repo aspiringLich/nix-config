@@ -19,6 +19,7 @@
 
     unstable.inkscape
     unstable.mslicer
+    unstable.audacity
   ];
   programs.wireshark.enable = true;
 
