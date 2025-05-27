@@ -13,7 +13,6 @@
     unstable.sudo
     unstable.lazygit
     unstable.htop
-
     unstable.kdePackages.yakuake
   ];
 }

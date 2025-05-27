@@ -2,25 +2,36 @@
 {
   environment.systemPackages = with pkgs; [
     unstable.zed-editor
-    aseprite
+    unstable.jetbrains.idea-community-bin
+    unstable.jetbrains.rider
     unstable.alacritty
+
     unstable.obsidian
-    # unstable.libvlc
     unstable.vlc
     unstable.fluidsynth
-
-    unstable.webcord-vencord
     unstable.rpi-imager
-    unstable.typora
-    unstable.gparted
+    unstable.vesktop
     unstable.obs-studio
     unstable.qbittorrent
-    unstable.protonup-qt
+    unstable.ungoogled-chromium
+    unstable.gparted
 
-    unstable.inkscape
-    unstable.mslicer
+    aseprite
     unstable.audacity
+    unstable.typora
+    unstable.inkscape
+
+    kdePackages.qtwayland
+    (prismlauncher.override {
+      jdks = [
+        temurin-jre-bin-8
+        temurin-jre-bin-17
+        temurin-bin-23
+      ];
+    })
+    unstable.protonup-qt
   ];
+  services.mpd.fluidsynth.enable = true;
   programs.wireshark.enable = true;
 
   # https://nixos.wiki/wiki/Mullvad_VPN

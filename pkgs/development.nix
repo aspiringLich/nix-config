@@ -54,6 +54,9 @@
     zstd
     stdenv.cc.cc
     libplist
+    libGL
+    fontconfig
+    xwayland
   ];
 
   services.postgresql = {
