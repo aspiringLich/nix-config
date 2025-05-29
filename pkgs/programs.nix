@@ -20,6 +20,7 @@
     unstable.audacity
     unstable.typora
     unstable.inkscape
+    unstable.ardour
 
     kdePackages.qtwayland
     (prismlauncher.override {
