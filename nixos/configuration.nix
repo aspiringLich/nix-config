@@ -14,6 +14,8 @@
     ./power-management.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_6_14;
+  
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

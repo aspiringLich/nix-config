@@ -32,7 +32,7 @@
     })
     unstable.protonup-qt
   ];
-  services.mpd.fluidsynth.enable = true;
+  services.fluidsynth.enable = true;
   programs.wireshark.enable = true;
 
   # https://nixos.wiki/wiki/Mullvad_VPN

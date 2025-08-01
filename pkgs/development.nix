@@ -6,8 +6,8 @@
     nixfmt-rfc-style
     cachix
 
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
+    # wineWowPackages.stable
+    # wineWowPackages.waylandFull
 
     unstable.rustc
     unstable.cargo
@@ -57,6 +57,12 @@
     libGL
     fontconfig
     xwayland
+
+    xorg.libXext
+    xorg.libXtst
+    xorg.libX11
+    xorg.libXrender
+    xorg.libXi
   ];
 
   services.postgresql = {
