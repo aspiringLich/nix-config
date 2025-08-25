@@ -14,5 +14,7 @@
     unstable.lazygit
     unstable.htop
     unstable.kdePackages.yakuake
+    unstable.ffmpeg
+    unstable.tldr
   ];
 }

@@ -23,6 +23,7 @@
     unstable.ardour
 
     kdePackages.qtwayland
+    kdePackages.kdialog
     (prismlauncher.override {
       jdks = [
         temurin-jre-bin-8
@@ -32,7 +33,7 @@
     })
     unstable.protonup-qt
   ];
-  services.fluidsynth.enable = true;
+  services.mpd.fluidsynth.enable = true;
   programs.wireshark.enable = true;
 
   # https://nixos.wiki/wiki/Mullvad_VPN
