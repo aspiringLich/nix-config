@@ -11,6 +11,9 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -21,6 +24,7 @@
       nixos-hardware,
       nixpkgs-unstable,
       nixpkgs-unbroken,
+      nix-index-database,
       ...
     }@inputs:
     let
@@ -60,6 +64,7 @@
             ./pkgs
             ./nix.nix
             nixos-hardware.nixosModules.framework-13-7040-amd
+            nix-index-database.nixosModules.nix-index
           ];
         };
       };
