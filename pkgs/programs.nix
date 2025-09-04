@@ -1,6 +1,5 @@
 { pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
+{  environment.systemPackages = with pkgs; [
     unstable.zed-editor
     unstable.jetbrains.idea-community-bin
     unstable.jetbrains.rider
@@ -24,6 +23,8 @@
 
     kdePackages.qtwayland
     kdePackages.kdialog
+    kdePackages.korganizer
+    kdePackages.kdepim-addons
     (prismlauncher.override {
       jdks = [
         temurin-jre-bin-8
@@ -32,6 +33,9 @@
       ];
     })
     unstable.protonup-qt
+
+    unstable.quartus-prime-lite
+    unstable.omnissa-horizon-client
   ];
   services.mpd.fluidsynth.enable = true;
   programs.wireshark.enable = true;

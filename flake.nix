@@ -11,7 +11,7 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -34,6 +34,9 @@
         unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
+          config.permittedInsecurePackages = [
+            "libxml2-2.13.8"
+          ];
         };
         unbroken = import nixpkgs-unbroken {
           inherit system;
@@ -57,7 +60,9 @@
               { ... }:
               {
                 nixpkgs.overlays = [ overlay ];
-                nixpkgs.config.allowUnfree = true;
+                nixpkgs.config = {
+                  allowUnfree = true;
+                };
               }
             )
             ./nixos/configuration.nix
@@ -79,7 +84,9 @@
               { ... }:
               {
                 nixpkgs.overlays = [ overlay ];
-                nixpkgs.config.allowUnfree = true;
+                nixpkgs.config = {
+                  allowUnfree = true;
+                };
               }
             )
             # > Our main home-manager configuration file <
