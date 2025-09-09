@@ -23,6 +23,13 @@
 
     unstable.avrdude
     unstable.arduino-ide
+    
+    llvmPackages_latest.lldb
+    llvmPackages_latest.libllvm
+    llvmPackages_latest.libcxx
+    llvmPackages_latest.clang
+    llvmPackages_latest.clang-tools
+    cmake
   ];
   users.extraGroups.dialout.members = [ "mainusr" ];
   environment.sessionVariables = {

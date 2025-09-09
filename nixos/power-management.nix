@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  boot.kernelParams = [ "amd_pstate=passive" "resume_offset=145268736" ];
+  boot.kernelParams = [
+    "amd_pstate=passive"
+    "resume_offset=145268736"
+  ];
   # powerManagement.enable = true;
   # powerManagement.cpuFreqGovernor = "schedutil";
   # firefox hardware acceleration
@@ -31,14 +34,14 @@
       size = 32 * 1024;
     }
   ];
-  # boot.resumeDevice makes the boot sequence hang on "a start job is running for /var/lib/swapfile"
-  # boot.resumeDevice = "/var/lib/swapfile";
-  # systemd.tpm2.enable = false;
-  # boot.initrd.systemd.tpm2.enable = false;
+
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=8h
+    HibernateDelaySec=1h
+    SuspendState=mem
   '';
   services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.powerKey = "hibernate";
+  services.logind.powerKeyLongPress = "poweroff";
 
   # https://community.frame.work/t/troubleshooting-hibernate-amd-ryzen-7040/60876/9
   # systemd.services.disable-wireless-hibernate = {
