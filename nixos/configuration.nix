@@ -13,6 +13,8 @@
     ./i8n.nix
     ./power-management.nix
   ];
+  nix.gc.automatic = true;
+  
   # boot.kernelPackages = pkgs.linuxPackages_6_14;
   
   boot.supportedFilesystems = [ "ntfs" ];

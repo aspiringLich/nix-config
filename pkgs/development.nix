@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
 {
+  # /bin/bash works now yay
+  services.envfs.enable = true;
   environment.systemPackages = with pkgs; [
     nixd
     nil
@@ -23,13 +25,14 @@
 
     unstable.avrdude
     unstable.arduino-ide
-    
+
     llvmPackages_latest.lldb
     llvmPackages_latest.libllvm
     llvmPackages_latest.libcxx
     llvmPackages_latest.clang
     llvmPackages_latest.clang-tools
     cmake
+    gnumake
   ];
   users.extraGroups.dialout.members = [ "mainusr" ];
   environment.sessionVariables = {
@@ -70,6 +73,8 @@
     xorg.libX11
     xorg.libXrender
     xorg.libXi
+    xorg.libXft
+    ncurses5
   ];
 
   services.postgresql = {
