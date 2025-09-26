@@ -1,4 +1,4 @@
-# NixOS Condiguration
+# NixOS Configuration
 
 I have no idea what I'm doing.
 
