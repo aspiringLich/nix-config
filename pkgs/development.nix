@@ -33,6 +33,8 @@
     llvmPackages_latest.clang-tools
     cmake
     gnumake
+    
+    unstable.nixos-anywhere
   ];
   users.extraGroups.dialout.members = [ "mainusr" ];
   environment.sessionVariables = {

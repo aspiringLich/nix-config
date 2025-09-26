@@ -14,6 +14,11 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    # for nixos-anywhere
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -25,6 +30,9 @@
       nixpkgs-unstable,
       nixpkgs-unbroken,
       nix-index-database,
+      
+      nixos-facter-modules,
+      disko,
       ...
     }@inputs:
     let
@@ -66,10 +74,19 @@
               }
             )
             ./nixos/configuration.nix
+            ./nixos/hardware-configuration.nix
             ./pkgs
             ./nix.nix
             nixos-hardware.nixosModules.framework-13-7040-amd
             nix-index-database.nixosModules.nix-index
+          ];
+        };
+        cloudflake = nixpkgs.lib.nixosSystem {
+          modules = [
+            disko.nixosModules.disko
+            ./cloudflake/configuration.nix
+            nixos-facter-modules.nixosModules.facter
+            { config.facter.reportPath = ./facter.json; }
           ];
         };
       };
