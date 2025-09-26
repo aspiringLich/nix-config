@@ -10,12 +10,12 @@ nixos-rebuild switch --flake .#amitofu
 nh os switch .
 ```
 
-## Server: Cloudflake
+## Server: `cloudflake`
 
 a flake in the cloud
 
-```
-nixos-anywhere --flake .#cloudflake --generate-hardware-config nixos-facter ./facter.json -i ~/.ssh/id_ed25519 --target-host root@155.138.194.30 
+```bash
+nixos-anywhere --flake .#cloudflake --generate-hardware-config nixos-facter ./cloudflake/facter.json -i ~/.ssh/id_ed25519 --target-host root@155.138.194.30 
 
 nixos-rebuild switch --flake .#cloudflake --target-host "root@155.138.194.30"
 ```

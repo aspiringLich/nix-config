@@ -10,6 +10,8 @@
 {
   imports = [
     ./disk-config.nix
+    ./server.nix
+    ./pkgs.nix
   ];
 
   # boot.supportedFilesystems = [ "ntfs" ];

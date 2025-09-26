@@ -86,7 +86,7 @@
             disko.nixosModules.disko
             ./cloudflake/configuration.nix
             nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./facter.json; }
+            { config.facter.reportPath = ./cloudflake/facter.json; }
           ];
         };
       };
