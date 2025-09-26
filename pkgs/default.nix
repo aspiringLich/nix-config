@@ -7,7 +7,6 @@
   ];
   environment.systemPackages = with pkgs; [
     unstable.neofetch
-    unstable.nh
     unstable.vim
     unstable.git
     unstable.sudo
@@ -17,4 +16,11 @@
     unstable.ffmpeg
     unstable.tldr
   ];
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/mainusr/Documents/nix-config/"; # sets NH_OS_FLAKE variable for you
+  };
 }
