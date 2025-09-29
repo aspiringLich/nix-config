@@ -36,6 +36,7 @@
 
     unstable.quartus-prime-lite
     unstable.omnissa-horizon-client
+    unstable.dbeaver-bin
   ];
   services.mpd.fluidsynth.enable = true;
   programs.wireshark.enable = true;

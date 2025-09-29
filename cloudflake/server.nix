@@ -6,6 +6,7 @@
 {
   services.part-db = {
     enable = true;
+    enablePostgresql = true;
     settings = {
       DEFAULT_LANG = "en";
       DEFAULT_TIMEZONE = "America/New_York";
@@ -26,7 +27,7 @@
     virtualHosts."part-db.bcli.dev" = {
       enableACME = true;
       forceSSL = true;
-      
+
       # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/web-apps/part-db.nix
       root = "${config.services.part-db.package}/public";
       locations = {
@@ -51,14 +52,20 @@
 
   services.postgresql = {
     enable = true;
-    enableTCPIP = true;
+    ensureDatabases = [ "part-db" ];
     authentication = pkgs.lib.mkOverride 10 ''
-      #type database DBuser origin-address auth-method
-      local all       all     trust
-      # ipv4
-      host  all      all     127.0.0.1/32   trust
-      # ipv6
-      host all       all     ::1/128        trust
+      #type database  DBuser   auth-method optional_ident_map
+      local sameuser  all      peer        map=superuser_map
+      local all       root     trust
+      local all       postgres trust
+
+      host  all       postgres ::1/128    trust
+    '';
+    identMap = ''
+      # ArbitraryMapName systemUser DBUser
+      superuser_map      root      postgres
+      # Let other names login as themselves
+      superuser_map      /^(.*)$   \1
     '';
   };
 

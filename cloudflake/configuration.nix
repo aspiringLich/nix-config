@@ -14,7 +14,7 @@
     ./pkgs.nix
   ];
 
-  # boot.supportedFilesystems = [ "ntfs" ];
+  nix.gc.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
