@@ -15,6 +15,9 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     # for nixos-anywhere
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
     disko.url = "github:nix-community/disko";
@@ -30,7 +33,8 @@
       nixpkgs-unstable,
       nixpkgs-unbroken,
       nix-index-database,
-      
+      sops-nix,
+
       nixos-facter-modules,
       disko,
       ...
@@ -79,6 +83,7 @@
             ./nix.nix
             nixos-hardware.nixosModules.framework-13-7040-amd
             nix-index-database.nixosModules.nix-index
+            sops-nix.nixosModules.sops
           ];
         };
         cloudflake = nixpkgs.lib.nixosSystem {

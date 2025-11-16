@@ -50,6 +50,7 @@
     alsa-lib
     clang
     glibc
+    glib
     libclang
     libffi
     libxkbcommon
@@ -68,6 +69,7 @@
     libGL
     fontconfig
     xwayland
+    icu
 
     xorg.libXext
     xorg.libXtst

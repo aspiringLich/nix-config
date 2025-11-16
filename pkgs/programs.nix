@@ -1,5 +1,9 @@
-{ pkgs, ... }:
-{  environment.systemPackages = with pkgs; [
+{ pkgs, config, ... }:
+let
+  secrets = config.sops.secrets;
+in
+{
+  environment.systemPackages = with pkgs; [
     unstable.zed-editor
     unstable.jetbrains.idea-community-bin
     unstable.jetbrains.rider
@@ -20,12 +24,13 @@
     unstable.typora
     unstable.inkscape
     unstable.ardour
+    unstable.spotify
 
     kdePackages.qtwayland
     kdePackages.kdialog
     kdePackages.korganizer
     kdePackages.kdepim-addons
-    (prismlauncher.override {
+    (unstable.prismlauncher.override {
       jdks = [
         temurin-jre-bin-8
         temurin-jre-bin-17
@@ -33,11 +38,25 @@
       ];
     })
     unstable.protonup-qt
+    unstable.ckan
 
     unstable.quartus-prime-lite
     unstable.omnissa-horizon-client
     unstable.dbeaver-bin
+
+    unstable.openfortivpn
   ];
+  # environment.etc = {
+  #   "openfortivpn/config" = {
+  #     text = ''
+  #       host = vpn2.case.edu
+  #       port = 443
+  #       username = $(cat ${secrets."openfortivpn-case/user".path})
+  #       password = $(cat ${secrets."openfortivpn-case/pass".path})
+  #     '';
+  #   };
+  # };
+
   services.mpd.fluidsynth.enable = true;
   programs.wireshark.enable = true;
 

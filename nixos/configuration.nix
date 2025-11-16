@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ./sops.nix
     ./font.nix
     ./hardware-configuration.nix
     ./i8n.nix

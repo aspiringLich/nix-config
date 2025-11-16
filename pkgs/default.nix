@@ -17,6 +17,10 @@
     unstable.tldr
   ];
 
+  environment.variables = {
+    EDITOR = "vim";
+  };
+
   programs.nh = {
     enable = true;
     clean.enable = true;
