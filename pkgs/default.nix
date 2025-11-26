@@ -12,7 +12,7 @@
     unstable.sudo
     unstable.lazygit
     unstable.htop
-    unstable.kdePackages.yakuake
+    kdePackages.yakuake
     unstable.ffmpeg
     unstable.tldr
   ];

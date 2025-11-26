@@ -33,7 +33,8 @@
     llvmPackages_latest.clang-tools
     cmake
     gnumake
-
+    
+    unstable.claude-code
   ];
   users.extraGroups.dialout.members = [ "mainusr" ];
   environment.sessionVariables = {

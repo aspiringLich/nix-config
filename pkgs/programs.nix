@@ -4,7 +4,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    unstable.zed-editor
+    unstable.zed-editor-fhs
     unstable.jetbrains.idea-community-bin
     unstable.jetbrains.rider
     unstable.alacritty

@@ -14,7 +14,8 @@
     ./i8n.nix
     ./power-management.nix
   ];
-  # boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_6_17;
+  boot.initrd.kernelModules = [ "amdgpu" ];
   
   boot.supportedFilesystems = [ "ntfs" ];
 
