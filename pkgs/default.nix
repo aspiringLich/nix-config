@@ -15,6 +15,9 @@
     kdePackages.yakuake
     unstable.ffmpeg
     unstable.tldr
+
+    rar
+    unrar
   ];
 
   environment.variables = {

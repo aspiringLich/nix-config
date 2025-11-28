@@ -71,6 +71,7 @@
     fontconfig
     xwayland
     icu
+    libz
 
     xorg.libXext
     xorg.libXtst
