@@ -39,9 +39,9 @@
     HibernateDelaySec=1h
     SuspendState=mem
   '';
-  services.logind.lidSwitch = "suspend-then-hibernate";
-  services.logind.powerKey = "hibernate";
-  services.logind.powerKeyLongPress = "poweroff";
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+  services.logind.settings.Login.HandlePowerKey = "hibernate";
+  services.logind.settings.Login.HandlePowerKeyLongPress = "poweroff";
 
   # https://community.frame.work/t/troubleshooting-hibernate-amd-ryzen-7040/60876/9
   # systemd.services.disable-wireless-hibernate = {

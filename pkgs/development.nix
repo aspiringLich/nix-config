@@ -54,7 +54,6 @@
     glib
     libclang
     libffi
-    libxkbcommon
     mold
     unstable.openssl
     pkg-config
@@ -62,7 +61,6 @@
     stdenv
     vulkan-loader
     wayland
-    xorg.libxcb
     zlib
     zstd
     stdenv.cc.cc
@@ -72,14 +70,17 @@
     xwayland
     icu
     libz
+    ncurses5
 
+    libxkbcommon
+    libxcursor
+    xorg.libxcb
     xorg.libXext
     xorg.libXtst
     xorg.libX11
     xorg.libXrender
     xorg.libXi
     xorg.libXft
-    ncurses5
   ];
 
   services.postgresql = {

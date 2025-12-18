@@ -10,6 +10,7 @@ in
     unstable.alacritty
 
     unstable.obsidian
+    unstable.logseq
     unstable.vlc
     unstable.fluidsynth
     unstable.rpi-imager
@@ -34,13 +35,11 @@ in
       jdks = [
         temurin-jre-bin-8
         temurin-jre-bin-17
-        temurin-bin-23
       ];
     })
     unstable.protonup-qt
     unstable.ckan
 
-    unstable.quartus-prime-lite
     unstable.omnissa-horizon-client
     unstable.dbeaver-bin
 
