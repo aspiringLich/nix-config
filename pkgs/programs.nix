@@ -8,6 +8,7 @@ in
     unstable.jetbrains.idea-community-bin
     unstable.jetbrains.rider
     unstable.alacritty
+    unstable.kicad
 
     unstable.obsidian
     unstable.logseq

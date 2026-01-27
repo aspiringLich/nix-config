@@ -72,8 +72,10 @@
     libz
     ncurses5
 
-    libxkbcommon
     libxcursor
+    libxkbcommon
+    libxrandr
+    libxxf86vm
     xorg.libxcb
     xorg.libXext
     xorg.libXtst
@@ -81,6 +83,7 @@
     xorg.libXrender
     xorg.libXi
     xorg.libXft
+    xorg.xrandr
   ];
 
   services.postgresql = {
