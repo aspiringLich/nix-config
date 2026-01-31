@@ -13,6 +13,7 @@
     ./hardware-configuration.nix
     ./i8n.nix
     ./power-management.nix
+    ./smb-mounts.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.initrd.kernelModules = [ "amdgpu" ];

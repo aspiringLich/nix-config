@@ -18,6 +18,8 @@
 
     rar
     unrar
+    
+    wineWowPackages.stable
   ];
 
   environment.variables = {

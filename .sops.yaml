@@ -1,7 +1,8 @@
 keys:
-  - &admin age1aj30uql87203aqkkgv628alsytlja37mhxe22v37gg250wq07dzsx3yc6y
+  - &mainusr age1aj30uql87203aqkkgv628alsytlja37mhxe22v37gg250wq07dzsx3yc6y
+
 creation_rules:
-  - path_regex: secrets/[^/]+\.(yml|json|env|ini)$
+  - path_regex: .*
     key_groups:
       - age:
-          - *admin
+          - *mainusr

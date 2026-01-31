@@ -5,7 +5,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     unstable.zed-editor-fhs
-    unstable.jetbrains.idea-community-bin
+    unstable.jetbrains.idea-oss
     unstable.jetbrains.rider
     unstable.alacritty
     unstable.kicad
