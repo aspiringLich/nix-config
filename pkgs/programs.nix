@@ -10,12 +10,14 @@ in
     unstable.alacritty
     unstable.kicad
 
+    unstable.vesktop
+    unstable.beeper
+    
     unstable.obsidian
     unstable.logseq
     unstable.vlc
     unstable.fluidsynth
     unstable.rpi-imager
-    unstable.vesktop
     unstable.obs-studio
     unstable.qbittorrent
     unstable.ungoogled-chromium

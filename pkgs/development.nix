@@ -7,6 +7,7 @@
     nil
     nixfmt-rfc-style
     cachix
+    unstable.nix-output-monitor
 
     # wineWowPackages.stable
     # wineWowPackages.waylandFull

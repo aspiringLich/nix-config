@@ -26,4 +26,6 @@
   #     "x-systemd.mount-timeout=5s"
   #   ];
   # };
+  # 
+  # services.sf3.enable = true;
 }

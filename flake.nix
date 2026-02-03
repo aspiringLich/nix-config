@@ -82,7 +82,8 @@
             ./pkgs
             ./nix.nix
             nixos-hardware.nixosModules.framework-13-7040-amd
-            nix-index-database.nixosModules.nix-index
+            nix-index-database.nixosModules.default
+            { programs.nix-index-database.comma.enable = true; }
             sops-nix.nixosModules.sops
           ];
         };

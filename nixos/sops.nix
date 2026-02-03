@@ -26,5 +26,8 @@
       path = "/etc/nixos/smb-credentials";
       mode = "0600";
     };
+    
+    # secrets."s3_access_key" = {};
+    # secrets."s3_secret_key" = {};
   };
 }
