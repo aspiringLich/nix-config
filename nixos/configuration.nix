@@ -8,12 +8,13 @@
 }:
 {
   imports = [
-    ./sops.nix
+    ./desktop.nix
     ./font.nix
     ./hardware-configuration.nix
     ./i8n.nix
     ./power-management.nix
     ./mounts.nix
+    ./sops.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -41,22 +42,8 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "alt-intl";
-  };
-
   # Configure console keymap
-  console.keyMap = "dvorak";
+  console.keyMap = "qwerty";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

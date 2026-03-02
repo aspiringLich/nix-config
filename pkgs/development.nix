@@ -101,4 +101,9 @@
   };
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "mainusr" ];
+  
+  services.udev.extraRules = ''
+      # UNO R4 https://github.com/arduino/ArduinoCore-renesas/blob/main/post_install.sh
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"
+  '';
 }

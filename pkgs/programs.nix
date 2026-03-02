@@ -12,7 +12,7 @@ in
 
     unstable.vesktop
     unstable.beeper
-    
+
     unstable.obsidian
     unstable.logseq
     unstable.vlc
