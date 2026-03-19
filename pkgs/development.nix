@@ -19,9 +19,9 @@
     unstable.nodejs
     unstable.pnpm
 
-    unstable.python312
-    unstable.python312Packages.ipykernel
-    unstable.python312Packages.python-lsp-server
+    unstable.python3
+    unstable.python3Packages.ipykernel
+    unstable.python3Packages.python-lsp-server
     unstable.pyright
 
     unstable.avrdude
@@ -34,7 +34,7 @@
     llvmPackages_latest.clang-tools
     cmake
     gnumake
-    
+
     unstable.claude-code
   ];
   users.extraGroups.dialout.members = [ "mainusr" ];
@@ -101,7 +101,7 @@
   };
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "mainusr" ];
-  
+
   services.udev.extraRules = ''
       # UNO R4 https://github.com/arduino/ArduinoCore-renesas/blob/main/post_install.sh
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"

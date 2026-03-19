@@ -6,17 +6,24 @@
       HandlePowerKey = "lock";
       HandlePowerKeyLongPress = "hibernate";
       HandleLidSwitch = "suspend-then-hibernate";
+      IdleAction = "suspend-then-hibernate";
     };
   };
 
-  boot.kernelParams = [ "amd_pstate=passive" "amdgpu.abmlevel=0" "resume_offset=145268736"];
+  boot.kernelParams = [
+    "resume_offset=145268736"
+    "acpi_osi=\"!Windows 2020\""
+    "mem_sleep_default=s2idle"
+    "amdgpu.dcdebugmask=0x10"
+    "pcie_aspm=off"
+  ];
   boot.resumeDevice = "/dev/disk/by-uuid/74ec4e80-5aa3-42b2-93cd-5200d342a0f9";
-    swapDevices = [
-      {
-        device = "/var/lib/swapfile";
-        size = 32 * 1024;
-      }
-    ];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024;
+    }
+  ];
 
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=30M
@@ -27,22 +34,23 @@
   security.protectKernelImage = false;
   boot.initrd.systemd.enable = true;
 
-  powerManagement = {
+  services.tlp.enable = false;
+  services.power-profiles-daemon.enable = false;
+  services.auto-cpufreq = {
     enable = true;
-    powertop.enable = false;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
   };
 
-  services = {
-    tlp.enable = false;
-    power-profiles-daemon.enable = false;
-    tuned = {
-      enable = true;
-      settings.dynamic_tuning = true;
-    };
-    thermald.enable = true;
-  };
-  
   environment.systemPackages = with pkgs; [
-      unstable.radeontop
+    unstable.radeontop
   ];
 }

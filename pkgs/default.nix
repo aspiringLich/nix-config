@@ -6,7 +6,7 @@
     ./shell.nix
   ];
   environment.systemPackages = with pkgs; [
-    unstable.neofetch
+    unstable.fastfetch
     unstable.vim
     unstable.git
     unstable.sudo
@@ -18,7 +18,7 @@
 
     rar
     unrar
-    
+
     wineWowPackages.stable
   ];
 

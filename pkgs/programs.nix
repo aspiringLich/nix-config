@@ -38,6 +38,8 @@ in
       jdks = [
         temurin-jre-bin-8
         temurin-jre-bin-17
+        temurin-jre-bin-21
+        temurin-jre-bin-25
       ];
     })
     unstable.protonup-qt
