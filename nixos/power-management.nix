@@ -5,17 +5,24 @@
     logind.settings.Login = {
       HandlePowerKey = "lock";
       HandlePowerKeyLongPress = "hibernate";
-      HandleLidSwitch = "suspend-then-hibernate";
-      IdleAction = "suspend-then-hibernate";
+      HandleLidSwitch = "suspend";
+      IdleAction = "suspend";
     };
   };
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=30M
+    HibernateOnACPower=false
+    IdleActionSec=30M
+  '';
 
   boot.kernelParams = [
     "resume_offset=145268736"
     "acpi_osi=\"!Windows 2020\""
     "mem_sleep_default=s2idle"
-    "amdgpu.dcdebugmask=0x10"
+    "amdgpu.dcdebugmask=0x400"
     "pcie_aspm=off"
+    "amdgpu.dc=1"
+    "amdgpu.abmlevel=0"
   ];
   boot.resumeDevice = "/dev/disk/by-uuid/74ec4e80-5aa3-42b2-93cd-5200d342a0f9";
   swapDevices = [
@@ -25,14 +32,9 @@
     }
   ];
 
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30M
-    HibernateOnACPower=false
-  '';
-
   # Disable kernel image protection to fix hibernation resume
   security.protectKernelImage = false;
-  boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.enable = false;
 
   services.tlp.enable = false;
   services.power-profiles-daemon.enable = false;

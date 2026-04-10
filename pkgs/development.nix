@@ -105,5 +105,14 @@
   services.udev.extraRules = ''
       # UNO R4 https://github.com/arduino/ArduinoCore-renesas/blob/main/post_install.sh
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"
+
+      # Udev rules for Raspberry Pi Pico in BOOTSEL mode (mass storage device)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+
+      # Udev rules for Raspberry Pi Pico as a serial port (e.g., for MicroPython REPL or C/C++ debugging)
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000a", MODE="0666"
+
+      # Optional: Rules for the official Raspberry Pi Debug Probe (Vendor/Product IDs may differ for other probes)
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="0666"
   '';
 }

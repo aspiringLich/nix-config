@@ -18,7 +18,7 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.initrd.kernelModules = [ "amdgpu" ];
-  
+
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Bootloader.
@@ -43,7 +43,7 @@
   time.timeZone = "America/New_York";
 
   # Configure console keymap
-  console.keyMap = "qwerty";
+  # console.keyMap = "qwerty";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

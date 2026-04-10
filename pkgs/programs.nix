@@ -73,8 +73,10 @@ in
 
   programs.firefox = {
     enable = true;
-    package = pkgs.unstable.firefox;
+    package = pkgs.unstable.firefox-devedition;
   };
+
+  environment.shellAliases."firefox" = "firefox-devedition";
 
   # https://wiki.nixos.org/wiki/Steam
   programs.steam = {
