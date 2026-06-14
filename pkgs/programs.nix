@@ -22,6 +22,7 @@ in
     unstable.qbittorrent
     unstable.ungoogled-chromium
     unstable.gparted
+    unstable.input-remapper
 
     aseprite
     unstable.audacity
@@ -50,6 +51,8 @@ in
 
     unstable.openfortivpn
   ];
+  
+  services.input-remapper.enable = true;
   # environment.etc = {
   #   "openfortivpn/config" = {
   #     text = ''

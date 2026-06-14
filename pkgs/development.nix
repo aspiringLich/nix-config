@@ -23,9 +23,11 @@
     unstable.python3Packages.ipykernel
     unstable.python3Packages.python-lsp-server
     unstable.pyright
+    unstable.micromamba
 
     unstable.avrdude
     unstable.arduino-ide
+    unstable.quartus-prime-lite
 
     llvmPackages_latest.lldb
     llvmPackages_latest.libllvm

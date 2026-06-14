@@ -9,11 +9,11 @@
       IdleAction = "suspend";
     };
   };
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30M
-    HibernateOnACPower=false
-    IdleActionSec=30M
-  '';
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "30M";
+    HibernateOnACPower = false;
+    IdleActionSec = "30M";
+  };
 
   boot.kernelParams = [
     "resume_offset=145268736"

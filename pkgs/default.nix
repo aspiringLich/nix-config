@@ -18,6 +18,9 @@
 
     rar
     unrar
+    libnotify
+    kdePackages.qtquick3d
+    kdePackages.knotifications
 
     wineWowPackages.stable
   ];
@@ -32,4 +35,11 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/mainusr/Documents/nix-config/"; # sets NH_OS_FLAKE variable for you
   };
+  
+  services.pipewire.wireplumber.extraConfig.no-ucm = {
+      "monitor.alsa.properties" = {
+        "alsa.use-ucm" = false;
+      };
+    };
+
 }
