@@ -15,6 +15,7 @@
     ./power-management.nix
     ./mounts.nix
     ./sops.nix
+    ./rocm.nix
   ];
   boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.initrd.kernelModules = [ "amdgpu" ];
@@ -40,7 +41,8 @@
   hardware.bluetooth.powerOnBoot = true;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  # time.timeZone = "America/New_York";
+  time.timeZone = "America/Los_Angeles";
 
   # Configure console keymap
   # console.keyMap = "qwerty";
