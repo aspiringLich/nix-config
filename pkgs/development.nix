@@ -1,7 +1,8 @@
 { pkgs, lib, ... }:
 {
   # /bin/bash works now yay
-  services.envfs.enable = true;
+  # services.envfs.enable = true;
+  services.envfs.enable = false;
   environment.systemPackages = with pkgs; [
     nixd
     nil
@@ -24,6 +25,10 @@
     unstable.python3Packages.python-lsp-server
     unstable.pyright
     unstable.micromamba
+    unstable.uv
+
+    dotnetCorePackages.sdk_8_0
+    mono
 
     unstable.avrdude
     unstable.arduino-ide

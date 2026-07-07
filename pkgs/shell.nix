@@ -7,7 +7,7 @@
     '';
   };
   # https://discourse.nixos.org/t/slow-build-at-building-man-cache/52365/5
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
   programs.bash = {
     interactiveShellInit = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]

@@ -12,6 +12,7 @@ in
 
     unstable.vesktop
     unstable.beeper
+    wechat
 
     unstable.obsidian
     unstable.logseq
@@ -50,6 +51,10 @@ in
     unstable.dbeaver-bin
 
     unstable.openfortivpn
+
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en-us
   ];
   
   services.input-remapper.enable = true;

@@ -37,20 +37,32 @@
   boot.initrd.systemd.enable = false;
 
   services.tlp.enable = false;
-  services.power-profiles-daemon.enable = false;
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-    };
-  };
+
+  services.tuned.enable = true;
+  services.tuned.settings.daemon = true;
+  services.tuned.ppdSupport = true;
+  services.tuned.settings.profile_dirs = "/etc/tuned/";
+  services.tuned.settings.dynamic_tuning = true;
+
+  # services.auto-cpufreq = {
+  #   enable = true;
+  #   settings = {
+  #     battery = {
+  #       governor = "powersave";
+  #       turbo = "never";
+  #     };
+  #     charger = {
+  #       governor = "performance";
+  #       turbo = "auto";
+  #     };
+  #   };
+  # };
+
+  # Disable light sensors and accelerometers as
+  # they are not used and consume extra battery
+  hardware.sensor.iio.enable = false;
+
+  hardware.wirelessRegulatoryDatabase = true;
 
   environment.systemPackages = with pkgs; [
     unstable.radeontop
